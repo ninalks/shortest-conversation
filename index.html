@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Like Button</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide-react@latest/dist/lucide-react.min.js"></script>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .heart-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 96px;
+      height: 96px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .heart-button:hover {
+      transform: scale(1.1);
+    }
+    .heart-icon {
+      transition: fill 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .heart-icon.liked {
+      fill: #ef4444;
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+  <button id="likeButton" class="heart-button">
+    <svg id="heartIcon" xmlns="http://www.w3.org/2000/svg" class="heart-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+  </button>
+
+  <script>
+    document.getElementById('likeButton').addEventListener('click', function () {
+      const heartIcon = document.getElementById('heartIcon');
+      heartIcon.classList.toggle('liked');
+    });
+  </script>
+</body>
+</html>
